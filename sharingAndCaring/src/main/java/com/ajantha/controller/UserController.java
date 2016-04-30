@@ -38,6 +38,17 @@ public class UserController {
             return model;
         }
 
+    @RequestMapping(value = "/welcome", method = RequestMethod.GET)
+    public ModelAndView wecomePage() {
+        ModelAndView model = new ModelAndView();
+//        model.addObject("username", "This is protected page - Database Page!");
+//        model.addObject("title", "Spring Security Hello World");
+        model.setViewName("welcome");
+
+        return model;
+
+    }
+
         @RequestMapping(value = "/admin**", method = RequestMethod.GET)
         public ModelAndView adminPage() {
             ModelAndView model = new ModelAndView();

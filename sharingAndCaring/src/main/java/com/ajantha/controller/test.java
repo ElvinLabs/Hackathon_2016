@@ -16,8 +16,8 @@ import java.util.List;
 public class test {
     public static void main(String[] args) {
 
-         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MongoConfig.class);
-         MongoTemplate mongoTemplate = (MongoTemplate) applicationContext.getBean("mongoTemplate");
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MongoConfig.class);
+        MongoTemplate mongoTemplate = (MongoTemplate) applicationContext.getBean("mongoTemplate");
 
         ApplicationUser user = new ApplicationUser();
         user.setFirstName("Ajantha");
