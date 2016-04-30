@@ -14,20 +14,22 @@ import java.util.List;
 public class PurchasePost {
 
     @Id
-    private String purchasepostId;
+    private String postId;
     private String title;
     private String content;
     private List<String> keywords;
+
+    public String getPostId() {
+        return postId;
+    }
+
+    public void setPostId(String postId) {
+        this.postId = postId;
+    }
+
     private String imagePath;
 
 
-    public String getPurchasepostId() {
-        return purchasepostId;
-    }
-
-    public void setPurchasepostId(String purchasepostId) {
-        this.purchasepostId = purchasepostId;
-    }
 
     public String getTitle() {
         return title;
