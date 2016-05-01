@@ -12,7 +12,7 @@
       <h2 style="font-weight: 800">Smasung core 2 duos</h2>
     </div>
     <div class="col-lg-8">
-      <img src="resources/img/modern-family-room.jpg" width="100%" height="400px">
+      <img src="resources/img/bag" width="100%" height="400px">
     </div>
     <div class="col-lg-4">
       <h4>Key words</h4>
