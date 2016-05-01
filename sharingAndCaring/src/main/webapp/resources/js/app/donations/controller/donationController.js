@@ -5,5 +5,12 @@
 scApp.controller("donationController" , function($scope) {
 
 
+    $scope.massage = "Hello";
+
+    $scope.post = {
+        title:"",
+        content:"",
+
+    }
 
 });

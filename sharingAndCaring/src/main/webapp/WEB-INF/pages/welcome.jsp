@@ -61,7 +61,7 @@
   <!-- Bootstrap Core JavaScript -->
   <script src="resources/js/bootstrap.min.js"></script>
   <script src="resources/js/app/config/routeProvider.js"></script>
-  <script src="resources/js/app/controller/donationController.js"></script>
+  <script src="resources/js/app/donations/controller/donationController.js"></script>
 </body>
 
 </html>

@@ -7,13 +7,16 @@ scApp.config(function($routeProvider) {
             templateUrl: 'home'
         })
         .when('/home', {
-            templateUrl: 'home'
+            templateUrl: 'home',
+            controller: 'donationController'
         })
         .when('/intro', {
             templateUrl: 'intro'
         })
         .when('/addDonation', {
-            templateUrl: 'addDonation',
+            templateUrl: 'addDonation'
+
+            //controllerAs:'dntnCtrl'
 
         })
         .otherwise({
