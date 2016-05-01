@@ -10,12 +10,12 @@
   <div class="row">
 <div class="col-lg-12"><h2 style="float: right;font-weight: 800;">Add Donation</h2><hr></div>
     <form class="form-horizontal" role="form">
-        <h1>{{massage}}asfasfa</h1>
+        <h1></h1>
 
       <div class="form-group">
         <label class="control-label col-sm-3" for="email">Donation Name:</label>
         <div class="col-sm-9">
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
+          <input type="email" class="form-control" >
         </div>
       </div>
 

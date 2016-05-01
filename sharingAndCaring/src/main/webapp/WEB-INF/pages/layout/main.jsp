@@ -9,14 +9,13 @@
        <a href="#/addDonation"><button class="btn btn-sm btn-info">Add Donation</button></a>
         <input type="text" class="form-control" placeholder="Search for...">
       </div>
-
     </div>
 
     <div class="col-lg-6 col-sm-6" style="height: 200px;">
       <div style="background-color: #ffffff;margin: 5px;border-radius: 5px;box-shadow: 0px 0px 10px #888888;height: 180px">
         <div class="row" style="">
           <div class="col-lg-4 col-sm-4">
-            <img src="resources/img/modern-family-room.jpg" height="180px" width="100%">
+            <img src="resources/img/phone.jpg" height="180px" width="100%">
           </div>
           <div class="col-lg-8  col-sm-8" style="padding: 15px">
             <h2>Smasung core 2 duos"</h2>
@@ -31,7 +30,7 @@
       <div style="background-color: #ffffff;margin: 5px;border-radius: 5px;box-shadow: 0px 0px 10px #888888;height: 180px">
         <div class="row">
           <div class="col-lg-4  col-sm-4">
-            <img src="resources/img/modern-family-room.jpg" height="180px" width="100%">
+            <img src="resources/img/bag.jpg" height="180px" width="100%">
           </div>
           <div class="col-lg-8  col-sm-8" style="padding: 15px">
             <h2>Singer Leather Bag</h2>
@@ -46,7 +45,7 @@
       <div style="background-color: #ffffff;margin: 5px;border-radius: 5px;box-shadow: 0px 0px 10px #888888;height: 180px">
         <div class="row">
           <div class="col-lg-4 col-sm-4">
-            <img src="resources/img/modern-family-room.jpg" height="180px" width="100%">
+            <img src="resources/img/lap.jpg" height="180px" width="100%">
           </div>
           <div class="col-lg-8  col-sm-8" style="padding: 15px">
             <h2>Asus K55A</h2>
