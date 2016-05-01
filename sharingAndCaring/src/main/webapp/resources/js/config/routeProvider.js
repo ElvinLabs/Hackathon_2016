@@ -23,5 +23,4 @@ scApp.config(function($routeProvider) {
 
 scApp.controller("commonController" , function($scope ) {
 
-
 });

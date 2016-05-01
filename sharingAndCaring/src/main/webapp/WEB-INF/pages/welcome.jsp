@@ -60,7 +60,7 @@
 
   <!-- Bootstrap Core JavaScript -->
   <script src="resources/js/bootstrap.min.js"></script>
-  <script src="resources/js/angularControllers/routeProvider.js"></script>
+  <script src="resources/js/config/routeProvider.js"></script>
 </body>
 
 </html>
