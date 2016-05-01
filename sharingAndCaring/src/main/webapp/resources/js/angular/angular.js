@@ -5714,7 +5714,7 @@ function Browser(window, document, $log, $sniffer) {
 
   var cachedState, lastHistoryState,
       lastBrowserUrl = location.href,
-      baseElement = document.find('base'),
+      baseElement = document.find('common'),
       pendingLocation = null;
 
   cacheState();
@@ -5922,10 +5922,10 @@ function Browser(window, document, $log, $sniffer) {
    * @name $browser#baseHref
    *
    * @description
-   * Returns current <base href>
+   * Returns current <common href>
    * (always relative - without domain)
    *
-   * @returns {string} The current base href
+   * @returns {string} The current common href
    */
   self.baseHref = function() {
     var href = baseElement.attr('href');
@@ -11738,8 +11738,8 @@ function serverBase(url) {
  * This object is exposed as $location service when HTML5 mode is enabled and supported
  *
  * @constructor
- * @param {string} appBase application base URL
- * @param {string} appBaseNoFile application base URL stripped of any filename
+ * @param {string} appBase application common URL
+ * @param {string} appBaseNoFile application common URL stripped of any filename
  * @param {string} basePrefix url path prefix
  */
 function LocationHtml5Url(appBase, appBaseNoFile, basePrefix) {
@@ -11814,11 +11814,11 @@ function LocationHtml5Url(appBase, appBaseNoFile, basePrefix) {
 /**
  * LocationHashbangUrl represents url
  * This object is exposed as $location service when developer doesn't opt into html5 mode.
- * It also serves as the base class for html5 mode fallback on legacy browsers.
+ * It also serves as the common class for html5 mode fallback on legacy browsers.
  *
  * @constructor
- * @param {string} appBase application base URL
- * @param {string} appBaseNoFile application base URL stripped of any filename
+ * @param {string} appBase application common URL
+ * @param {string} appBaseNoFile application common URL stripped of any filename
  * @param {string} hashPrefix hashbang prefix
  */
 function LocationHashbangUrl(appBase, appBaseNoFile, hashPrefix) {
@@ -11929,8 +11929,8 @@ function LocationHashbangUrl(appBase, appBaseNoFile, hashPrefix) {
  * does not support it.
  *
  * @constructor
- * @param {string} appBase application base URL
- * @param {string} appBaseNoFile application base URL stripped of any filename
+ * @param {string} appBase application common URL
+ * @param {string} appBaseNoFile application common URL stripped of any filename
  * @param {string} hashPrefix hashbang prefix
  */
 function LocationHashbangInHtml5Url(appBase, appBaseNoFile, hashPrefix) {
@@ -12026,7 +12026,7 @@ var locationPrototype = {
    * // => "/some/path?foo=bar&baz=xoxo"
    * ```
    *
-   * @param {string=} url New url without base prefix (e.g. `/path?a=b#hash`)
+   * @param {string=} url New url without common prefix (e.g. `/path?a=b#hash`)
    * @return {string} url
    */
   url: function(url) {
@@ -12385,8 +12385,8 @@ function $LocationProvider() {
    *     change urls where supported. Will fall back to hash-prefixed paths in browsers that do not
    *     support `pushState`.
    *   - **requireBase** - `{boolean}` - (default: `true`) When html5Mode is enabled, specifies
-   *     whether or not a <base> tag is required to be present. If `enabled` and `requireBase` are
-   *     true, and a base tag is not present, an error will be thrown when `$location` is injected.
+   *     whether or not a <common> tag is required to be present. If `enabled` and `requireBase` are
+   *     true, and a common tag is not present, an error will be thrown when `$location` is injected.
    *     See the {@link guide/$location $location guide for more information}
    *   - **rewriteLinks** - `{boolean}` - (default: `true`) When html5Mode is enabled,
    *     enables/disables url rewriting for relative links.
@@ -12460,14 +12460,14 @@ function $LocationProvider() {
       function($rootScope, $browser, $sniffer, $rootElement, $window) {
     var $location,
         LocationMode,
-        baseHref = $browser.baseHref(), // if base[href] is undefined, it defaults to ''
+        baseHref = $browser.baseHref(), // if common[href] is undefined, it defaults to ''
         initialUrl = $browser.url(),
         appBase;
 
     if (html5Mode.enabled) {
       if (!baseHref && html5Mode.requireBase) {
         throw $locationMinErr('nobase',
-          "$location in HTML5 mode requires a <base> tag to be present!");
+          "$location in HTML5 mode requires a <common> tag to be present!");
       }
       appBase = serverBase(initialUrl) + (baseHref || '/');
       LocationMode = $sniffer.history ? LocationHtml5Url : LocationHashbangInHtml5Url;
@@ -19987,7 +19987,7 @@ var htmlAnchorDirective = valueFn({
           element(by.id('link-3')).click();
 
           // At this point, we navigate away from an Angular page, so we need
-          // to use browser.driver to get the base webdriver.
+          // to use browser.driver to get the common webdriver.
 
           browser.wait(function() {
             return browser.driver.getCurrentUrl().then(function(url) {
@@ -20016,7 +20016,7 @@ var htmlAnchorDirective = valueFn({
           element(by.id('link-6')).click();
 
           // At this point, we navigate away from an Angular page, so we need
-          // to use browser.driver to get the base webdriver.
+          // to use browser.driver to get the common webdriver.
           browser.wait(function() {
             return browser.driver.getCurrentUrl().then(function(url) {
               return url.match(/\/6$/);
@@ -23225,31 +23225,31 @@ function classDirective(name, selector) {
       <input id="setbtn" type="button" value="set" ng-click="myVar='my-class'">
       <input id="clearbtn" type="button" value="clear" ng-click="myVar=''">
       <br>
-      <span class="base-class" ng-class="myVar">Sample Text</span>
+      <span class="common-class" ng-class="myVar">Sample Text</span>
      </file>
      <file name="style.css">
-       .base-class {
+       .common-class {
          transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
        }
 
-       .base-class.my-class {
+       .common-class.my-class {
          color: red;
          font-size:3em;
        }
      </file>
      <file name="protractor.js" type="protractor">
        it('should check ng-class', function() {
-         expect(element(by.css('.base-class')).getAttribute('class')).not.
+         expect(element(by.css('.common-class')).getAttribute('class')).not.
            toMatch(/my-class/);
 
          element(by.id('setbtn')).click();
 
-         expect(element(by.css('.base-class')).getAttribute('class')).
+         expect(element(by.css('.common-class')).getAttribute('class')).
            toMatch(/my-class/);
 
          element(by.id('clearbtn')).click();
 
-         expect(element(by.css('.base-class')).getAttribute('class')).not.
+         expect(element(by.css('.common-class')).getAttribute('class')).not.
            toMatch(/my-class/);
        });
      </file>

@@ -2,18 +2,47 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ajantha</groupId>
-    <artifactId>Spring-Security-HelloWorld</artifactId>
+    <groupId>com.sharingandcaring</groupId>
+    <artifactId>SharingAndCaring</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>Spring Security</name>
+    <name>sharingAndCaring</name>
 
     <developers>
         <developer>
             <name>Ajantha Bandara</name>
-            <email>ajantha.bandara@shipxpress.com</email>
+            <email>ajantha.p.bandara@gmail.com</email>
         </developer>
+        <developer>
+            <name>charika</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>Dileepa Chandima</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>Dushan Chanturange</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>Gayan Rajapakse</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>kushan</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>Nimasha</name>
+            <email></email>
+        </developer>
+        <developer>
+            <name>Sachithra Sewwandi</name>
+            <email></email>
+        </developer>
+
     </developers>
 
     <properties>
@@ -29,8 +58,7 @@
     </properties>
 
     <!-- the project url -->
-    <url>http://10.16.32.66:8080/shipxtimetracker</url>
-
+    <url>http://127.0.0.1:8080/sharingAndCaring</url>
 
     <dependencies>
         <!-- java ee api -->
@@ -117,12 +145,6 @@
             <version>1.2</version>
         </dependency>
 
-        <!-- Spring data mongodb -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-            <version>1.8.1.RELEASE</version>
-        </dependency>
 
         <!-- Cglib -->
         <dependency>
@@ -164,6 +186,11 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <version>4.0.3.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-mongodb</artifactId>
+            <version>1.8.1.RELEASE</version>
         </dependency>
 
 
@@ -227,7 +254,7 @@
                 <configuration>
                     <url>http://127.0.0.1:8080/manager/text</url>
                     <server>tc-8</server>
-                    <path>/sharingcaring</path>
+                    <path>/sharingAndCaring</path>
                 </configuration>
             </plugin>
 
