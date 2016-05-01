@@ -13,7 +13,8 @@ scApp.config(function($routeProvider) {
             templateUrl: 'intro'
         })
         .when('/addDonation', {
-            templateUrl: 'addDonation'
+            templateUrl: 'addDonation',
+
         })
         .otherwise({
             redirectTo: '/'
